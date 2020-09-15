@@ -1,0 +1,19 @@
+{
+  "name": "faas-expressts",
+  "version": "1.0.0",
+  "description": "Example of basic express server using typescript and openfaas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --outDir ./dist/",
+    "upfaas": "tsc --sourceMap false;cp package.json ./express-typescript/package.json;cp package-lock.json ./express-typescript/package-lock.json;faas-cli up -f express-typescript.yml"
+  },
+  "author": "Eduardo Soto",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

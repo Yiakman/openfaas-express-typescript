@@ -1,0 +1,26 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "eol-last": 1,
+        "no-unused-expressions": 1,
+        "no-trailing-spaces": 1,
+        "arrow-body-style": 1,
+        "no-unused-vars": 2,
+        "no-empty-interface": 0,
+        "new-parens": 2,
+        "camelcase": 1,
+        "no-mixed-spaces-and-tabs": 2,
+        "max-len": [1, { "code": 150 }],
+        "indent": [2, 2],
+        "quotes": [1, "single"]
+    }
+}

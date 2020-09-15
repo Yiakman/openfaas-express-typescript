@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "esModuleInterop": true,
+      "target": "es2018",
+      "lib": ["es2018", "dom"],
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "express-typescript/dist",
+      "types": [],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "plugins": []
+    },
+    "include": [
+      "./src/**/*", "./src/custom.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

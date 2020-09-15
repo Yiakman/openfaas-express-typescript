@@ -1,0 +1,13 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://localhost:8080
+functions:
+  express-typescript:
+    lang: dockerfile
+    handler: ./express-typescript
+    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:express-typescript
+    labels:
+        com.openfaas.scale.min: 1
+        com.openfaas.scale.max: 1
+        com.openfaas.scale.zero: true
