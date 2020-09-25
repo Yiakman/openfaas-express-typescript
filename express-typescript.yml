@@ -3,11 +3,26 @@ provider:
   name: openfaas
   gateway: http://localhost:8080
 functions:
-  express-typescript:
+  myfunction:
     lang: dockerfile
     handler: ./express-typescript
-    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:express-typescript
+    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:myfunction
     labels:
-        com.openfaas.scale.min: 1
-        com.openfaas.scale.max: 1
-        com.openfaas.scale.zero: true
+      com.openfaas.scale.min: 0
+      com.openfaas.scale.max: 1
+      com.openfaas.scale.factor: 20
+      com.openfaas.scale.zero: true
+    environment:
+      NODE_ENV: 'development'
+      read_timeout:  "10s"         # Maximum time to read HTTP request
+      write_timeout: "10s"         # Maximum time to write HTTP response
+      upstream_timeout: "10s"      # Maximum duration of upstream function call
+      exec_timeout: "10s"          # Maximum time to execute function
+##
+## Default secrets (Uncomment if required)
+## baseurl: For current environment cotalker-server
+## ecr-docker-login: For local (minikube) development
+#    secrets:
+#      - baseurl
+#      - ecr-docker-login
+
