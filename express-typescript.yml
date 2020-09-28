@@ -6,7 +6,7 @@ functions:
   myfunction:
     lang: dockerfile
     handler: ./express-typescript
-    image: 336102453294.dkr.ecr.us-east-1.amazonaws.com/cotfunctions:myfunction
+    image: '$yourimageuri'
     labels:
       com.openfaas.scale.min: 0
       com.openfaas.scale.max: 1
